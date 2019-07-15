@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSchedule.Specs", "FlightSchedule.Specs\FlightSchedule.Specs.csproj", "{51087EB0-835F-4517-A31D-676C62E16AE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Acceptance-Tests", "Acceptance-Tests", "{75208817-A5BA-4E52-82E2-C57A46FCF307}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B5597667-D80C-422E-A7C5-695F31A7A105}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E5393AD3-BE8E-4F8C-AE43-943556CFD8F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSchedule.Domain", "FlightSchedule.Domain\FlightSchedule.Domain.csproj", "{ADB60126-3E92-41D7-9BE8-DE3216D0BECC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSchedule.Domain.Tests", "FlightSchedule.Domain.Tests\FlightSchedule.Domain.Tests.csproj", "{F4E469E3-AC1C-473D-A3B5-8B9137FA5190}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSchedule.RestApi", "FlightSchedule.RestApi\FlightSchedule.RestApi.csproj", "{C3F12C14-D595-446E-B76A-3B380D753033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Persistence.EF", "FlightSchedule.Persistence.EF\FlightSchedule.Persistence.EF.csproj", "{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51087EB0-835F-4517-A31D-676C62E16AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51087EB0-835F-4517-A31D-676C62E16AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51087EB0-835F-4517-A31D-676C62E16AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51087EB0-835F-4517-A31D-676C62E16AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB60126-3E92-41D7-9BE8-DE3216D0BECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB60126-3E92-41D7-9BE8-DE3216D0BECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB60126-3E92-41D7-9BE8-DE3216D0BECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB60126-3E92-41D7-9BE8-DE3216D0BECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E469E3-AC1C-473D-A3B5-8B9137FA5190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E469E3-AC1C-473D-A3B5-8B9137FA5190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E469E3-AC1C-473D-A3B5-8B9137FA5190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E469E3-AC1C-473D-A3B5-8B9137FA5190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F12C14-D595-446E-B76A-3B380D753033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F12C14-D595-446E-B76A-3B380D753033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F12C14-D595-446E-B76A-3B380D753033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F12C14-D595-446E-B76A-3B380D753033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51087EB0-835F-4517-A31D-676C62E16AE3} = {75208817-A5BA-4E52-82E2-C57A46FCF307}
+		{ADB60126-3E92-41D7-9BE8-DE3216D0BECC} = {B5597667-D80C-422E-A7C5-695F31A7A105}
+		{F4E469E3-AC1C-473D-A3B5-8B9137FA5190} = {E5393AD3-BE8E-4F8C-AE43-943556CFD8F9}
+		{C3F12C14-D595-446E-B76A-3B380D753033} = {B5597667-D80C-422E-A7C5-695F31A7A105}
+		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694} = {B5597667-D80C-422E-A7C5-695F31A7A105}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31213BF4-76DA-4033-849D-CC8BEB1ADAF6}
+	EndGlobalSection
+EndGlobal
