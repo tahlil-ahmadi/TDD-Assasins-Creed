@@ -3,7 +3,7 @@ using System.Text;
 
 namespace FlightSchedule.Specs.Model
 {
-    public class CharterScheduleRequest
+    public class CharterSchedule
     {
         public string FlightNo { get; set; }
         public string Seats { get; set; }

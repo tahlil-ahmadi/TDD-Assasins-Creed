@@ -12,15 +12,17 @@ namespace FlightSchedule.RestApi.Controllers
     public class CharterSchedulesController : ControllerBase
     {
         [HttpPost]
-        public void Post()
+        public IActionResult Post()
         {
-            throw new NotImplementedException();
+            var id = new Random().Next(1,1000000000);
+            return CreatedAtAction(nameof(Get), new {id = id}, id);
         }
 
         [HttpGet]
-        public List<string> Get()
+        [Route("{id}")]
+        public string Get(long id)
         {
-            return null;
+            return "Hello world !";
         }
     }
 }

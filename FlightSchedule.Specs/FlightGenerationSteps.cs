@@ -1,5 +1,6 @@
 ﻿using System;
-using FlightSchedule.Specs.Screenplay;
+using Suzianna.Core.Screenplay;
+using Suzianna.Core.Screenplay.Actors;
 using TechTalk.SpecFlow;
 
 namespace FlightSchedule.Specs
@@ -16,8 +17,7 @@ namespace FlightSchedule.Specs
         [Given(@"'(.*)' is a flight agency manager")]
         public void GivenIsAnFlightAgencyManager(string name)
         {
-            var actor = new Actor(name);
-            this._stage.ShineSpotlightOn(actor);
+            this._stage.ShineSpotlightOn(name);
         }
         
         [Given(@"He has defined a charter schedule as following")]

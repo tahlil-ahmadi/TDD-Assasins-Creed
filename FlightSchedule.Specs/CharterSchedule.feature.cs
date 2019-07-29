@@ -17,7 +17,7 @@ namespace FlightSchedule.Specs
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class SpecFlowFeature1Feature : Xunit.IClassFixture<SpecFlowFeature1Feature.FixtureData>, System.IDisposable
+    public partial class CharterScheduleFeatureFeature : Xunit.IClassFixture<CharterScheduleFeatureFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -27,7 +27,7 @@ namespace FlightSchedule.Specs
 #line 1 "CharterSchedule.feature"
 #line hidden
         
-        public SpecFlowFeature1Feature(SpecFlowFeature1Feature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CharterScheduleFeatureFeature(CharterScheduleFeatureFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace FlightSchedule.Specs
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpecFlowFeature1", "\tIn order to ?\r\n\tAs a ?\r\n\tI want to be ?", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Charter Schedule Feature", "\tIn order to ?\r\n\tAs a ?\r\n\tI want to be ?", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,7 +77,7 @@ namespace FlightSchedule.Specs
         }
         
         [Xunit.FactAttribute(DisplayName="Defining Charter Schedule")]
-        [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature1")]
+        [Xunit.TraitAttribute("FeatureTitle", "Charter Schedule Feature")]
         [Xunit.TraitAttribute("Description", "Defining Charter Schedule")]
         public virtual void DefiningCharterSchedule()
         {
@@ -136,12 +136,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                SpecFlowFeature1Feature.FeatureSetup();
+                CharterScheduleFeatureFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                SpecFlowFeature1Feature.FeatureTearDown();
+                CharterScheduleFeatureFeature.FeatureTearDown();
             }
         }
     }
