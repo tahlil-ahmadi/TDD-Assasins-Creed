@@ -7,7 +7,7 @@ namespace FlightSchedule.Application.Contracts
         public long Id { get; set; }
         public string Origin { get;  set; }
         public string Destination { get;  set; }
-        public DateTime Depart { get;  set; }
-        public DateTime Arrive { get;  set; }
+        public string Depart { get;  set; }
+        public string Arrive { get;  set; }
     }
 }

@@ -17,12 +17,16 @@ namespace FlightSchedule.Application
         }
         public Guid Create(CreateCharterScheduleDto dto)
         {
-            //var charterSchedule = new CharterSchedule(dto.Airline, dto.Airline, dto.FlightNo, dto.Seats);
-            //charterSchedule.AddTimeTable(new CharterTimeTable("IKA","DXB", DateTime.Now, DateTime.Now.AddDays(1)));
-            //_dbContext.CharterSchedules.Add(charterSchedule);
-            //_dbContext.SaveChanges();
-            //return charterSchedule.Id;
-            return Guid.NewGuid();
+            var charterSchedule = new CharterSchedule(dto.Airline, dto.Airplane, dto.FlightNo, dto.Seats);
+            foreach (var table in dto.TimeTables)
+            {
+                var depart = TimeSpan.Parse(table.DepartureTime);
+                var arrive = TimeSpan.Parse(table.ArriveDate);
+                charterSchedule.AddTimeTable(new CharterTimeTable(table.Day, table.Origin, table.Destination, depart, arrive));
+            }
+            _dbContext.CharterSchedules.Add(charterSchedule);
+            _dbContext.SaveChanges();
+            return charterSchedule.Id;
         }
         public CharterTemplateDto GetById(Guid id)
         {
@@ -44,16 +48,14 @@ namespace FlightSchedule.Application
 
         private List<TimeTableDto> ConvertTimeTables(List<CharterTimeTable> timetables)
         {
-            //return timetables.Select(a => new TimeTableDto()
-            //{
-            //    Id = a.Id,
-            //    Depart = a.Depart,
-            //    Arrive = a.Arrive,
-            //    Destination = a.Destination,
-            //    Origin = a.Origin
-
-            //}).ToList();
-            return null;
+            return timetables.Select(a => new TimeTableDto()
+            {
+                Id = a.Id,
+                Depart = a.Depart.ToShortTime(),
+                Arrive = a.Arrive.ToShortTime(),
+                Destination = a.Destination,
+                Origin = a.Origin
+            }).ToList();
         }
     }
 }

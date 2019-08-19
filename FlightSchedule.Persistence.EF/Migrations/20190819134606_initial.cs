@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FlightSchedule.Persistence.EF.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,10 +29,11 @@ namespace FlightSchedule.Persistence.EF.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Day = table.Column<int>(nullable: false),
                     Origin = table.Column<string>(nullable: true),
                     Destination = table.Column<string>(nullable: true),
-                    Depart = table.Column<DateTime>(nullable: false),
-                    Arrive = table.Column<DateTime>(nullable: false),
+                    Depart = table.Column<TimeSpan>(nullable: false),
+                    Arrive = table.Column<TimeSpan>(nullable: false),
                     CharterScheduleId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>

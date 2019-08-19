@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FlightSchedule.Persistence.EF.Migrations
 {
     [DbContext(typeof(FlightScheduleDbContext))]
-    [Migration("20190819121525_Initial")]
-    partial class Initial
+    [Migration("20190819134606_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,11 +45,13 @@ namespace FlightSchedule.Persistence.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Arrive");
+                    b.Property<TimeSpan>("Arrive");
 
                     b.Property<Guid>("CharterScheduleId");
 
-                    b.Property<DateTime>("Depart");
+                    b.Property<int>("Day");
+
+                    b.Property<TimeSpan>("Depart");
 
                     b.Property<string>("Destination");
 

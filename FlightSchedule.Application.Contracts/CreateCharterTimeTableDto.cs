@@ -9,7 +9,7 @@ namespace FlightSchedule.Application.Contracts
         public DayOfWeek Day { get;  set; }
         public string Origin { get;  set; }
         public string Destination { get;  set; }
-        public string Depart { get;  set; }
-        public string Arrive { get;  set; }
+        public string DepartureTime { get;  set; }
+        public string ArriveDate { get;  set; }
     }
 }

@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 
 namespace FlightSchedule.Specs.Hooks
 {
-    [Binding]
+    //[Binding]
     public static class HostingHook
     {
         private static DotNetCoreHost _host;
@@ -17,7 +17,7 @@ namespace FlightSchedule.Specs.Hooks
             var options = new DotNetCoreHostOptions()
             {
                 //TODO: Fix This O_o
-                CsProjectPath = @"D:\Sources\TDD - Assasins Creed\Session 07\FlightSchedule\FlightSchedule.RestApi",
+                CsProjectPath = @"D:\Sources\TDD - Assasins Creed\Session 08\FlightSchedule\FlightSchedule.RestApi",
                 Port = 5000,
             };
             _host = new DotNetCoreHost(options);

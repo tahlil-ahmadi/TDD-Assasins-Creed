@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
-using FlightSchedule.Specs.Model;
+using FlightSchedule.Application.Contracts;
 using FlightSchedule.Specs.Tasks;
+using FluentAssertions;
 using Newtonsoft.Json;
 using NFluent;
 using Suzianna.Core.Screenplay;
@@ -19,7 +20,7 @@ namespace FlightSchedule.Specs
     public class SpecFlowFeature1Steps
     {
         private readonly Stage _stage;
-        private CharterSchedule model;
+        private CreateCharterScheduleDto model;
         public SpecFlowFeature1Steps(Stage stage)
         {
             _stage = stage;
@@ -29,13 +30,13 @@ namespace FlightSchedule.Specs
         [Given(@"he has entered the following charter schedule")]
         public void WhenHeDefinesTheFollowingCharterSchedule(Table table)
         {
-            model = table.CreateInstance<CharterSchedule>();
+            model = table.CreateInstance<CreateCharterScheduleDto>();
         }
         
         [Given(@"He has assigned the following timetable to it")]
         public void WhenHeHasAssignedTheFollowingTimetableToIt(Table table)
         {
-            model.TimeTable = table.CreateSet<TimeTable>().ToList();
+            model.TimeTables = table.CreateSet<CreateCharterTimeTableDto>().ToList();
         }
 
         [When("he submits the charter schedule")]
@@ -48,10 +49,9 @@ namespace FlightSchedule.Specs
         public void ThenItShouldBeAppearInTheListOfCharterSchedules()
         {
             var location = _stage.ActorInTheSpotlight.AsksFor(LastResponse.Header(HttpHeaders.Location));
-            //TODO: remove it from here
             _stage.ActorInTheSpotlight.AttemptsTo(Get.ResourceAt(location));
-
-            _stage.ActorInTheSpotlight.Should(See.That(LastResponse.Content<CharterSchedule>())).IsEqualTo(this.model);
+            var result = _stage.ActorInTheSpotlight.AsksFor(LastResponse.Content<CharterTemplateDto>());
+            result.Should().BeEquivalentTo(this.model, a=>a.ExcludingMissingMembers());
         }
     }
 }

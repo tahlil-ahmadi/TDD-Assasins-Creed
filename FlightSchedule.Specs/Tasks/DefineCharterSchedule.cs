@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
-using FlightSchedule.Specs.Model;
+using FlightSchedule.Application.Contracts;
 using Newtonsoft.Json;
 using Suzianna.Core.Screenplay;
 using Suzianna.Core.Screenplay.Actors;
@@ -12,8 +12,8 @@ namespace FlightSchedule.Specs.Tasks
 {
     public class DefineCharterSchedule : IPerformable
     {
-        private readonly CharterSchedule _model;
-        public DefineCharterSchedule(CharterSchedule model)
+        private readonly CreateCharterScheduleDto _model;
+        public DefineCharterSchedule(CreateCharterScheduleDto model)
         {
             _model = model;
         }

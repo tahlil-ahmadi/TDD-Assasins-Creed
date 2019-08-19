@@ -43,11 +43,13 @@ namespace FlightSchedule.Persistence.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Arrive");
+                    b.Property<TimeSpan>("Arrive");
 
                     b.Property<Guid>("CharterScheduleId");
 
-                    b.Property<DateTime>("Depart");
+                    b.Property<int>("Day");
+
+                    b.Property<TimeSpan>("Depart");
 
                     b.Property<string>("Destination");
 
