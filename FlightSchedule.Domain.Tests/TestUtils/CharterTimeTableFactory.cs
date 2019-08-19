@@ -9,9 +9,9 @@ namespace FlightSchedule.Domain.Tests.TestUtils
     {
         public static CharterTimeTable CreateSomeTimetable()
         {
-            var depart = TimeSpan.Parse("08:00");
-            var arrive = TimeSpan.Parse("09:30");
-            var timeTable = new CharterTimeTable(DayOfWeek.Monday, "IKA", "DXB", depart, arrive);
+            var depart = DateTime.Now.AddDays(1);
+            var arrive = DateTime.Now.AddDays(5);
+            var timeTable = new CharterTimeTable("IKA", "DXB", depart, arrive);
             return timeTable;
         }
     }

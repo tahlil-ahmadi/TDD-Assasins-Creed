@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FlightSchedule.Application.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,18 +12,24 @@ namespace FlightSchedule.RestApi.Controllers
     [ApiController]
     public class CharterSchedulesController : ControllerBase
     {
-        [HttpPost]
-        public IActionResult Post()
+        private readonly ICharterScheduleService _service;
+        public CharterSchedulesController(ICharterScheduleService service)
         {
-            var id = new Random().Next(1,1000000000);
-            return CreatedAtAction(nameof(Get), new {id = id}, id);
+            _service = service;
         }
 
-        [HttpGet]
-        [Route("{id}")]
-        public string Get(long id)
+        [HttpPost]
+        public IActionResult Post(CreateCharterScheduleDto dto)
         {
-            return "Hello world !";
+            var createdId = _service.Create(dto);
+            return CreatedAtAction(nameof(Get), new { id = createdId }, createdId);
+        }
+
+        [Route("{id}")]
+        [HttpGet]
+        public IActionResult Get(Guid id)
+        {
+            return Ok(_service.GetById(id));
         }
     }
 }

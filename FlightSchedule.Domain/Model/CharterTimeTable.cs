@@ -4,15 +4,14 @@ namespace FlightSchedule.Domain.Model
 {
     public class CharterTimeTable
     {
-        public DayOfWeek Day { get; private set; }
+        public long Id { get; set; }
         public string Origin { get; private set; }
         public string Destination { get; private set; }
-        public TimeSpan Depart { get; private set; }
-        public TimeSpan Arrive { get; private set; }
+        public DateTime Depart { get; private set; }
+        public DateTime Arrive { get; private set; }
 
-        public CharterTimeTable(DayOfWeek day, string origin, string destination, TimeSpan depart, TimeSpan arrive)
+        public CharterTimeTable(string origin, string destination, DateTime depart, DateTime arrive)
         {
-            Day = day;
             Origin = origin;
             Destination = destination;
             Depart = depart;

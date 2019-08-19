@@ -17,7 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSchedule.Domain.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSchedule.RestApi", "FlightSchedule.RestApi\FlightSchedule.RestApi.csproj", "{C3F12C14-D595-446E-B76A-3B380D753033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Persistence.EF", "FlightSchedule.Persistence.EF\FlightSchedule.Persistence.EF.csproj", "{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightSchedule.Persistence.EF", "FlightSchedule.Persistence.EF\FlightSchedule.Persistence.EF.csproj", "{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Application.Contracts", "FlightSchedule.Application.Contracts\FlightSchedule.Application.Contracts.csproj", "{D4FE5816-C7A2-479B-82BF-39DD1FC0A7A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightSchedule.Application", "FlightSchedule.Application\FlightSchedule.Application.csproj", "{785C4BE6-29DC-4E14-9C25-61212935EE9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FE5816-C7A2-479B-82BF-39DD1FC0A7A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FE5816-C7A2-479B-82BF-39DD1FC0A7A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FE5816-C7A2-479B-82BF-39DD1FC0A7A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FE5816-C7A2-479B-82BF-39DD1FC0A7A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785C4BE6-29DC-4E14-9C25-61212935EE9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785C4BE6-29DC-4E14-9C25-61212935EE9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785C4BE6-29DC-4E14-9C25-61212935EE9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785C4BE6-29DC-4E14-9C25-61212935EE9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +67,8 @@ Global
 		{F4E469E3-AC1C-473D-A3B5-8B9137FA5190} = {E5393AD3-BE8E-4F8C-AE43-943556CFD8F9}
 		{C3F12C14-D595-446E-B76A-3B380D753033} = {B5597667-D80C-422E-A7C5-695F31A7A105}
 		{D5615C9E-2113-4F42-B9EE-16C2C7F9A694} = {B5597667-D80C-422E-A7C5-695F31A7A105}
+		{D4FE5816-C7A2-479B-82BF-39DD1FC0A7A2} = {B5597667-D80C-422E-A7C5-695F31A7A105}
+		{785C4BE6-29DC-4E14-9C25-61212935EE9D} = {B5597667-D80C-422E-A7C5-695F31A7A105}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31213BF4-76DA-4033-849D-CC8BEB1ADAF6}

@@ -6,9 +6,9 @@ namespace FlightSchedule.Domain.Model
     public class CharterSchedule
     {
         public Guid Id { get; set; }
-        public string Airline { get; }
-        public string Airplane { get; }
-        public string FlightNo { get; }
+        public string Airline { get; private set; }
+        public string Airplane { get; private set; }
+        public string FlightNo { get; private set; }
         public int Seats { get; }
         public List<CharterTimeTable> TimeTables { get; private set; }
 

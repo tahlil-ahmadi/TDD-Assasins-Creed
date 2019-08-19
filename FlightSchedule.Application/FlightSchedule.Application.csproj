@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlightSchedule.Application.Contracts\FlightSchedule.Application.Contracts.csproj" />
+    <ProjectReference Include="..\FlightSchedule.Persistence.EF\FlightSchedule.Persistence.EF.csproj" />
+  </ItemGroup>
+
+</Project>
