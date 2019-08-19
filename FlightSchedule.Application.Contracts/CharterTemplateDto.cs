@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FlightSchedule.Application.Contracts
 {
-    public class CharterTemplateDto
+    public class CharterScheduleDto
     {
         public Guid Id { get; set; }
         public string Airline { get; set; }

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net.Http;
 using FlightSchedule.Application.Contracts;
+using FlightSchedule.Specs.Questions;
 using FlightSchedule.Specs.Tasks;
 using FluentAssertions;
 using Newtonsoft.Json;
@@ -48,9 +49,7 @@ namespace FlightSchedule.Specs
         [Then(@"it should be appear in the list of charter schedules")]
         public void ThenItShouldBeAppearInTheListOfCharterSchedules()
         {
-            var location = _stage.ActorInTheSpotlight.AsksFor(LastResponse.Header(HttpHeaders.Location));
-            _stage.ActorInTheSpotlight.AttemptsTo(Get.ResourceAt(location));
-            var result = _stage.ActorInTheSpotlight.AsksFor(LastResponse.Content<CharterTemplateDto>());
+            var result = _stage.ActorInTheSpotlight.AsksFor(new CreatedCharterSchedule());
             result.Should().BeEquivalentTo(this.model, a=>a.ExcludingMissingMembers());
         }
     }

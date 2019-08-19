@@ -28,13 +28,13 @@ namespace FlightSchedule.Application
             _dbContext.SaveChanges();
             return charterSchedule.Id;
         }
-        public CharterTemplateDto GetById(Guid id)
+        public CharterScheduleDto GetById(Guid id)
         {
             var schedule = _dbContext.CharterSchedules
                 .Include(a => a.TimeTables)
                 .First(a => a.Id == id);
 
-            var output = new CharterTemplateDto()
+            var output = new CharterScheduleDto()
             {
                 Id = schedule.Id,
                 Airline = schedule.Airline,
