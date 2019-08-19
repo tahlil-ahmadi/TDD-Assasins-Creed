@@ -264,3 +264,4 @@ __pycache__/
 BuildScript/tools/*
 !BuildScript/tools/packages.config
 !BuildScript/tools/packages.config.md5sum
+*.ncrunchproject

@@ -17,11 +17,12 @@ namespace FlightSchedule.Application
         }
         public Guid Create(CreateCharterScheduleDto dto)
         {
-            var charterSchedule = new CharterSchedule(dto.Airline, dto.Airline, dto.FlightNo, dto.Seats);
-            charterSchedule.AddTimeTable(new CharterTimeTable("IKA","DXB", DateTime.Now, DateTime.Now.AddDays(1)));
-            _dbContext.CharterSchedules.Add(charterSchedule);
-            _dbContext.SaveChanges();
-            return charterSchedule.Id;
+            //var charterSchedule = new CharterSchedule(dto.Airline, dto.Airline, dto.FlightNo, dto.Seats);
+            //charterSchedule.AddTimeTable(new CharterTimeTable("IKA","DXB", DateTime.Now, DateTime.Now.AddDays(1)));
+            //_dbContext.CharterSchedules.Add(charterSchedule);
+            //_dbContext.SaveChanges();
+            //return charterSchedule.Id;
+            return Guid.NewGuid();
         }
         public CharterTemplateDto GetById(Guid id)
         {
@@ -43,15 +44,16 @@ namespace FlightSchedule.Application
 
         private List<TimeTableDto> ConvertTimeTables(List<CharterTimeTable> timetables)
         {
-            return timetables.Select(a => new TimeTableDto()
-            {
-                Id = a.Id,
-                Depart = a.Depart,
-                Arrive = a.Arrive,
-                Destination = a.Destination,
-                Origin = a.Origin
+            //return timetables.Select(a => new TimeTableDto()
+            //{
+            //    Id = a.Id,
+            //    Depart = a.Depart,
+            //    Arrive = a.Arrive,
+            //    Destination = a.Destination,
+            //    Origin = a.Origin
 
-            }).ToList();
+            //}).ToList();
+            return null;
         }
     }
 }
