@@ -13,9 +13,7 @@ namespace FlightSchedule.Persistence.EF
         public DbSet<CharterTimeTable> CharterTimeTables { get; set; }
         public FlightScheduleDbContext(DbContextOptions options) : base(options)
         {
-            
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CharterScheduleMapping).Assembly);

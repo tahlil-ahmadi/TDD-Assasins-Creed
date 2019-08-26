@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FlightSchedule.Application;
 using FlightSchedule.Application.Contracts;
 using FlightSchedule.Persistence.EF;
+using FlightSchedule.RestApi.Middlewares;
 using FlightSchedule.RestApi.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,13 +29,23 @@ namespace FlightSchedule.RestApi
             services.AddMvc();
 
             services.AddScoped<ICharterScheduleService, CharterScheduleService>();
-            services.AddDbContext<FlightScheduleDbContext>(a=> a.UseSqlServer(_options.ConnectionString));
+            services.AddScoped<IConnectionManager, ConnectionManager>();
+            //services.AddScoped<FlightScheduleDbContext>(a =>
+            //{
+            //    var connectionManager = a.GetService(typeof(IConnectionManager)) as IConnectionManager;
+            //    var builder = new DbContextOptionsBuilder();
+            //    builder.UseSqlServer(connectionManager.Get());
+            //    return new FlightScheduleDbContext(builder.Options);
+            //});
+
+            services.AddDbContext<FlightScheduleDbContext>(a => a.UseSqlServer(_options.ConnectionString));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
+                app.UseSandbox();
                 app.UseDeveloperExceptionPage();
             }
 
